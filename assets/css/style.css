@@ -1,0 +1,70 @@
+body {
+    background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/05/Doctor-Who-Desktop-Background.jpg);
+    background-position: center;
+    background-position-y: -21em;
+    background-size: 145em;
+}
+
+#header {
+    background-color: #182e55;
+    color: white;
+    font-family: impact, charcoal, sans-serif;
+    text-align: center;
+}
+
+
+.align-self-start {
+    border: solid;
+    border-width: 5px;
+    border-color: #eebf3b;
+    height: 500px;
+    margin: 20px;
+}
+
+.align-self-end {
+    border: solid;
+    border-width: 5px;
+    border-color: #1ea4d5;
+    height: 500px;
+    margin-top: 250px;
+    margin: 20px;
+}
+
+.pressAny {
+    color: #a6a6a6;
+    font-size: xx-large;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-skip-ink: none;
+}
+
+.wins {
+    color: #a6a6a6;
+    font-size: large;
+}
+
+.losses{
+    color: #a6a6a6;
+    font-size: large;
+}
+
+.guessesSoFar {
+    color: #a6a6a6;
+    font-size: large;
+}
+
+.blankWordSpaces{
+    color: #a6a6a6;
+    font-size: large;
+}
+
+
+.currentWord {
+    color: #a6a6a6;
+    font-size: xx-large;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-skip-ink: none;
+}

@@ -5,17 +5,45 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+
+    <title>Word Guess Game</title>
     
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-    <script src="assets/javascript/game.js"></script>
+
     
 </head>
 
 <body>
+
+    
+
+    <h1 id="header">Doctor Who Hangman</h1>
+
+    <div class="container">
+            <div class="row">
+              <div class="col align-self-start">
+                <p class="pressAny">Press Any Key To Start</p>
+                <br>
+                <br>
+                <p class="wins">Wins</p> 
+                <p class="losses">Losses</p>
+              </div>
+              <div class="col align-self-end">
+                <p class="currentWord">Current Word</p>
+                <br>
+                <p class="blankWordSpaces"></p>
+                <br>
+                <p class="guessesSoFar">Guesses So Far</p>
+              </div>
+            </div>
+          </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="assets/javascript/game.js"></script>
     
 </body>
 
