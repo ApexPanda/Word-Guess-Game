@@ -6,11 +6,13 @@ var randomWord = words[Math.floor(Math.random() * words.length)];
 
 var currentWordElement = document.querySelector(".blankWordSpaces");
 
+var guessesWordElement = document.querySelector(".guessesSoFar")
+
 var blankSpaces = "";
 
 var letterGuessed = "";
 
-
+// creates a _ for each letter of the random word
 for (var i = 0; i < randomWord.length; i++) {
     
     blankSpaces += "_ ";
@@ -18,12 +20,17 @@ for (var i = 0; i < randomWord.length; i++) {
 
 }
 
+// places _ on the page
 currentWordElement.innerHTML = blankSpaces;
 
+// on key up it will document the blankSpaces and event key
 document.onkeyup = function(event) {
     blankSpaces = "";
     letterGuessed = event.key;
     console.log(letterGuessed);
+
+    var letterGuessedArr = [];
+    
 
     if (event.keyCode >= 65 && event.keyCode <= 90){
 
@@ -39,12 +46,17 @@ document.onkeyup = function(event) {
                     blankSpaces += "_ ";
         
                 }
+
+    letterGuessedArr.push(letterGuessed);
+    console.log(letterGuessedArr);
            
         }
         //put blankSpaces on screen
         currentWordElement.innerHTML = blankSpaces;
         console.log(blankSpaces);
 
+        guessesWordElement.innerHTML = letterGuessed;
+        
 
         // To do
         // Add guess to an array
@@ -57,20 +69,3 @@ document.onkeyup = function(event) {
 
 
     
-
-
-//  Display the following on the page:
-
-//  Press any key to get started!
-
-//  Wins: (# of times user guessed the word correctly).
-
-//    * If the word is `madonna`, display it like this when the game starts: `_ _ _ _ _ _ _`.
-
-//    * As the user guesses the correct letters, reveal them: `m a d o _  _ a`.
-
-//  Number of Guesses Remaining: (# of guesses remaining for the user).
-
-//  Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
-
-//  After the user wins/loses the game should automatically choose another word and make the user play it.
