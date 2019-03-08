@@ -24,7 +24,6 @@ function decramentGuesses(){
 function endGame(){
     alert("Game Over");
     document.querySelector(".losses").innerHTML = "Number of Losses: " + losses;
-
 }
 
 function updateGuessesLeft(){
@@ -39,12 +38,14 @@ function guessesDisplay(){
     document.querySelector(".guessesSoFar").innerHTML = letterGuessed.join("<br>");
 };
 
+function reset(){
+    guessesLeft = 10;
+}
+
 // creates a _ for each letter of the random word
 for (var i = 0; i < randomWord.length; i++) {
     
     blankSpaces += "_ ";
-    
-
 }
 
 // places _ on the page
@@ -74,33 +75,29 @@ document.onkeyup = function(event) {
             // If userGuess equals randomWord index of i 
                 if (letterGuessed === randomWord[i]){
                 // Change blank space to that character
-                    blankSpaces += randomWord[i];
-                // } 
+                    blankSpaces = randomWord[i];
                 } else {
                     blankSpaces += "_ ";
         
-                }
-
         }
+    }
+}
         //put blankSpaces on screen
         currentWordElement.innerHTML = blankSpaces;
         console.log(blankSpaces);
-
-        
-        
-
-        
-    
-        
-
-        // To do
-        // Add guess to an array
-        // Check every character of array 
-        // Check to see if it matches randomWord i 
-    }
-
 }
 
+reset();
+        
+        
 
-
+        
     
+        
+
+        
+
+
+
+
+
