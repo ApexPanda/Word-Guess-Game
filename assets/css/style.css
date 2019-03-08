@@ -44,7 +44,12 @@ body {
     font-size: large;
 }
 
-.losses{
+.losses {
+    color: #a6a6a6;
+    font-size: large;
+}
+
+.guessesLeft {
     color: #a6a6a6;
     font-size: large;
 }

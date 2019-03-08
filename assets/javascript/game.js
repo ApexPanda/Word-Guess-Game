@@ -6,11 +6,38 @@ var randomWord = words[Math.floor(Math.random() * words.length)];
 
 var currentWordElement = document.querySelector(".blankWordSpaces");
 
-var guessesWordElement = document.querySelector(".guessesSoFar")
-
 var blankSpaces = "";
 
-var letterGuessed = "";
+var letterGuessed = [];
+
+var guessesLeft = 10;
+
+var losses = 0;
+
+var wins = 0;
+
+
+function decramentGuesses(){
+    guessesLeft-- 
+}
+
+function endGame(){
+    alert("Game Over");
+    document.querySelector(".losses").innerHTML = "Number of Losses: " + losses;
+
+}
+
+function updateGuessesLeft(){
+    document.querySelector(".guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
+}
+
+function winGame(){
+    alert("You Won!");
+}
+
+function guessesDisplay(){
+    document.querySelector(".guessesSoFar").innerHTML = letterGuessed.join("<br>");
+};
 
 // creates a _ for each letter of the random word
 for (var i = 0; i < randomWord.length; i++) {
@@ -27,10 +54,17 @@ currentWordElement.innerHTML = blankSpaces;
 document.onkeyup = function(event) {
     blankSpaces = "";
     letterGuessed = event.key;
-    console.log(letterGuessed);
+    decramentGuesses();
+    updateGuessesLeft();
+    console.log(guessesLeft);
 
-    var letterGuessedArr = [];
-    
+    if (guessesLeft === 0) {
+        losses++;
+        endGame();
+    } 
+
+    // win - if word is complete and guessesLeft does not equal 0 then wins++
+
 
     if (event.keyCode >= 65 && event.keyCode <= 90){
 
@@ -47,15 +81,16 @@ document.onkeyup = function(event) {
         
                 }
 
-    letterGuessedArr.push(letterGuessed);
-    console.log(letterGuessedArr);
-           
         }
         //put blankSpaces on screen
         currentWordElement.innerHTML = blankSpaces;
         console.log(blankSpaces);
 
-        guessesWordElement.innerHTML = letterGuessed;
+        
+        
+
+        
+    
         
 
         // To do
